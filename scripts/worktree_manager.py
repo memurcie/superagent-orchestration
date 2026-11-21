@@ -106,7 +106,10 @@ class WorktreeManager:
         cmd.append(str(wt_path))
 
         if wt_path.exists():
-            run_git(cmd, cwd=self.repo_dir)
+            res = run_git(cmd, cwd=self.repo_dir, check=False)
+            if res.returncode != 0:
+                print(f"Worktree contains build artifacts, removing with --force...")
+                run_git(["worktree", "remove", "--force", str(wt_path)], cwd=self.repo_dir)
             print(f"Removed worktree {wt_path}")
         else:
             print(f"Worktree path {wt_path} does not exist.")

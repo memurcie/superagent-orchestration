@@ -43,10 +43,10 @@ superagent-orchestration/
 
 | Role | Model Tier | Effort / Context | Key Constraints |
 |---|---|---|---|
-| **Router** | Claude 3.5 Sonnet / Opus / GPT-4o | High thinking effort | **Strictly NO coding tools.** Dispatches tickets and prompts user only for product/design decisions. |
-| **Sentinel Watchdog** | Claude 3.5 Haiku / Flash | Capped at ~150k tokens | Runs on a timer (every 10m). Scans worktrees and boards for silent sessions (>15m idle) or deadlocks. |
-| **Executor (Solo)** | Claude 3.5 Sonnet | Standard | Operates solely inside `.worktrees/ticket-<ID>`. Runs lint, tests, and saves verification proof. |
-| **Executor (Team)** | Claude 3.5 Sonnet | Collaborative | Multiple subagents collaborating via agent teams against a shared specification. |
+| **Router** | Frontier Tier (Claude 5.5 Sonnet / Gemini 3.8 Pro) | High thinking effort | **Strictly NO coding tools.** Dispatches tickets and prompts user only for product/design decisions. |
+| **Sentinel Watchdog** | Lightweight Tier (Claude 5.5 Haiku / Gemini 3.8 Flash) | Capped at ~150k tokens | Runs on a timer (every 10m). Scans worktrees and boards for silent sessions (>15m idle) or deadlocks. |
+| **Executor (Solo)** | Claude 5.5 Sonnet / Gemini 3.8 Pro | Standard | Operates solely inside `.worktrees/ticket-<ID>`. Runs lint, tests, and saves verification proof. |
+| **Executor (Team)** | Claude 5.5 Sonnet / Gemini 3.8 Pro | Collaborative | Multiple subagents collaborating via agent teams against a shared specification. |
 | **Combiner** | Fast Reasoning | Low/Standard | Executes non-fast-forward merge of ticket branch into `main`. |
 | **Verifier** | Fast Reasoning + Browser | Standard | Headless browser (Playwright / Agent Browser) E2E validation against `eval.md`. |
 | **Reproduction** | Standard Coding | Standard | Reproduces browser failures, diagnoses root causes, and hotfixes minor bugs. |

@@ -7,7 +7,7 @@ This document defines the agent personas, system prompt instructions, model sele
 ## 1. Router Agent (Orchestrator)
 
 * **Role:** Central dispatcher, human liaison, and task controller.
-* **Recommended Model:** Anthropic Claude 3.5 Sonnet / Claude 3 Opus or equivalent frontier model (set to high thinking/effort).
+* **Recommended Model:** Anthropic Frontier reasoning model (Claude 5.5 Sonnet, Claude 5 Opus, or Gemini 3.8 Pro with high thinking effort).
 * **Tool Permissions:** File reading, directory inspection, task manager execution, subagent dispatching.
 * **Strict Constraint:** **NEVER write, edit, or commit application source code.** All code authoring must be delegated to Executors.
 
@@ -31,7 +31,7 @@ CORE RULES:
 ## 2. Sentinel Watchdog Agent
 
 * **Role:** Background monitor detecting stalled processes, silent hangs, circular dependencies, and runaway contexts.
-* **Recommended Model:** Lightweight / fast model (Claude 3.5 Haiku, Claude 3.5 Sonnet with medium effort, or Gemini 1.5 Flash).
+* **Recommended Model:** Lightweight / fast model (Lightweight tier (Claude 5.5 Haiku or Gemini 3.8 Flash with medium effort)).
 * **Token Budget Limit:** Cap conversation context at ~150,000 tokens to avoid wasteful token burn.
 * **Interval:** Runs every 10–15 minutes.
 
@@ -52,7 +52,7 @@ RESPONSIBILITIES:
 ## 3. Executor Agent (Worker)
 
 * **Role:** Implements a single ticket within an isolated workspace.
-* **Recommended Model:** Frontier coding model (Claude 3.5 Sonnet / Claude 3.7 Sonnet).
+* **Recommended Model:** Frontier coding model (Frontier coding model (Claude 5.5 Sonnet / Gemini 3.8 Pro)).
 * **Workspace:** Isolated Git worktree (`.worktrees/ticket-<ID>`).
 * **Modes:**
   * **Solo Mode:** Runs independently.

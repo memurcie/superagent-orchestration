@@ -8,7 +8,7 @@ description: Multi-agent software engineering orchestration based on DeepSeek's 
 Implements the **DeepSeek "Superagent" multi-agent architecture** in Claude Code and Antigravity. Eliminates context thrashing and human cognitive overload by dividing responsibilities between a strictly non-coding Router, isolated Git worktree Executors, a background Sentinel Watchdog, and automated integration agents.
 
 ```
-[User] ◄──► [Router Agent (Opus/Sonnet)] ◄───► [specs/tickets/board.md]
+[User] ◄──► [Router Agent (Frontier Tier)] ◄───► [specs/tickets/board.md]
                      │
          ┌───────────┴───────────┬──────────────────────┐
          ▼                       ▼                      ▼
