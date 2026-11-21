@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Git worktrees directory for parallel workers
+.worktrees/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Environment & local credentials
+.env
+.env.local
+*.log
+
+# Distribution builds
+dist/
+*.skill
